@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "338913200886",
+    "project_id": "diseaseprediction-313af",
+    "storage_bucket": "diseaseprediction-313af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338913200886:android:d7ef01f6b951dbf651fad7",
+        "android_client_info": {
+          "package_name": "com.cm7.tuberculosisPrediction"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "338913200886-j105hgjlkkj3s04begkhejciq3e67470.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb9pcduYCr9ff8ZWEndtp5Jtg8QK9I79w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "338913200886-j105hgjlkkj3s04begkhejciq3e67470.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
