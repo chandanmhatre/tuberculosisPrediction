@@ -2,7 +2,7 @@
     package="com.cm7.tuberculosisPrediction">
     <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="tuberculosis_prediction"
+        android:label="Tuberculosis Prediction"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

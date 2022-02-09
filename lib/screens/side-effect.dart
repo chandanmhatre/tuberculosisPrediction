@@ -22,7 +22,7 @@ class _SideEffectScreenState extends State<SideEffectScreen> {
                   child: Card(
                     child: Container(
                         color: Colors.lightBlue.shade50,
-                        width: MediaQuery.of(context).size.width * .8,
+                        width: MediaQuery.of(context).size.width * .9,
                         child: Column(
                           children: const [
                             SizedBox(height: 20),

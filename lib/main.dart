@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/date_symbol_data_local.dart' as DateFormatter;
-import 'package:tuberculosis_prediction/screens/home-screen.dart';
+import 'package:tuberculosis_prediction/screens/splash-screen.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 Future main() async {
@@ -31,7 +31,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
+          fontFamily: "Quicksand",
         ),
-        home: const HomeScreen());
+        home: const SplashScreen());
   }
 }

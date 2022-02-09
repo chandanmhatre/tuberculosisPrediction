@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
@@ -52,8 +51,8 @@ class _NewsScreenState extends State<NewsScreen> {
           body: CustomScrollView(
             slivers: [
               SliverToBoxAdapter(
-                  child: WidgetUtils.dropDownButton("Select Country",
-                      'Select Country', dropDownValue, dropDownItem, (v) {
+                  child: WidgetUtils.dropDownButton("Change Country",
+                      'Change Country', dropDownValue, dropDownItem, (v) {
                 setState(() {
                   dropDownValue = v;
                 });
@@ -72,8 +71,8 @@ class _NewsScreenState extends State<NewsScreen> {
                                     builder: (context) => ViewNews(
                                           url: newsList[index]['url'],
                                           title: newsList[index]['source']
-                                                  ['name']
-                                              .toString(),
+                                                  ['name'] ??
+                                              '',
                                         ))),
                             child: Card(
                               elevation: 2,
@@ -108,7 +107,7 @@ class _NewsScreenState extends State<NewsScreen> {
                                       child: Align(
                                         alignment: Alignment.topLeft,
                                         child: Text(
-                                          newsList[index]['title'].toString(),
+                                          newsList[index]['title'] ?? '',
                                           maxLines: 2,
                                           overflow: TextOverflow.ellipsis,
                                           style: const TextStyle(fontSize: 16),
@@ -138,19 +137,23 @@ class _NewsScreenState extends State<NewsScreen> {
                                         Padding(
                                           padding: const EdgeInsets.fromLTRB(
                                               8, 0, 0, 8),
-                                          child: Text(
-                                            newsList[index]['source']['name']
-                                                .toString(),
-                                            maxLines: 3,
-                                            overflow: TextOverflow.ellipsis,
-                                            style: const TextStyle(
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 12),
+                                          child: SizedBox(
+                                            width: width * .5,
+                                            child: Text(
+                                              newsList[index]['source']
+                                                      ['name'] ??
+                                                  '',
+                                              maxLines: 1,
+                                              overflow: TextOverflow.ellipsis,
+                                              style: const TextStyle(
+                                                  fontWeight: FontWeight.w500,
+                                                  fontSize: 12),
+                                            ),
                                           ),
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.fromLTRB(
-                                              8, 0, 8, 8),
+                                              8, 0, 20, 8),
                                           child: Text(
                                             "Date: " +
                                                 newsList[index]['publishedAt']

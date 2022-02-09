@@ -264,8 +264,55 @@ class WidgetUtils {
     );
   }
 
+  static circularDialog(BuildContext context) {
+    showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (BuildContext context) {
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
+    );
+  }
+
+  static showPopUp(
+    String? title,
+    BuildContext context,
+    Function()? onPressed,
+    Widget? column, {
+    Function()? cancelButton,
+    bool isUpdating = false,
+  }) {
+    showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("$title"),
+            content: column,
+            actions: [
+              Center(
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    primary: Colors.white,
+                    backgroundColor: Colors.blue,
+                    elevation: 5,
+                  ),
+                  child: const Text("OK"),
+                  onPressed: onPressed,
+                ),
+              ),
+            ],
+          );
+        });
+  }
+
   static AppBar buildAppBar(BuildContext context, String? name,
-      {IconData? icon, Function()? onPressed, bool isDrawer = false}) {
+      {IconData? icon,
+      Function()? onPressed,
+      bool isDrawer = false,
+      List<Widget>? action}) {
     final title = Text(
       name!,
       overflow: TextOverflow.ellipsis,
@@ -288,6 +335,7 @@ class WidgetUtils {
             ),
       iconTheme: const IconThemeData(color: Colors.blue),
       title: title,
+      actions: action,
       centerTitle: true,
       backgroundColor: const Color.fromARGB(255, 222, 240, 253),
       elevation: 0,

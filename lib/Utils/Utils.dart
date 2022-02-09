@@ -10,4 +10,9 @@ class Utils {
     final value = double.parse(string!);
     return value;
   }
+
+  static isValidEmail(String email) {
+    final emailRegExp = RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+    return emailRegExp.hasMatch(email);
+  }
 }
